@@ -59,6 +59,6 @@ class ApiController extends Controller
     public function sendEmail(SendEmailRequest $request, CarService $carService): JsonResponse
     {
         $carService->sendData($request->validated());
-        return response()->noContent();
+        return response()->json(null, 202);
     }
 }
